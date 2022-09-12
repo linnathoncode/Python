@@ -21,9 +21,16 @@ def guessing_game():
             print(f"correct! there are {mnms} M&Ms") 
             break
         elif guess > mnms:
-            print("that is way too much, try again")
+            if guess - mnms >= 15:
+                print("that is way too much, try again")
+            elif guess - mnms < 15:
+                print("that is too much, try again")
         else:
-            print("that is way too low, try again")
+            if mnms - guess >= 15:
+                print("that is way too low, try again")
+            elif mnms - guess < 15:
+                print("that is low, try again")
+            
             
     if attempts > attemptLimit:
         print("you are out of tries rip bozo")    
